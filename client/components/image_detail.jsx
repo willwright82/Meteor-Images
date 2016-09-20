@@ -4,9 +4,16 @@
 import React from 'react';
 
 // Create our component
-const ImageDetail = () => {
+const ImageDetail = (props) => {
+  // props.image => This is the image object
+  // props.image.title
+  // props.image.link
+
   return (
-    <div>Image detail</div>
+    <li>
+      <img src={props.image.link} alt={props.image.title} />
+      {props.image.title}
+    </li>
   );
 };
 

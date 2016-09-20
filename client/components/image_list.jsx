@@ -13,9 +13,12 @@ const IMAGES = [
 
 // Create our component
 const ImageList = () => {
+  const RenderedImages = IMAGES.map(function(image) {
+    return <ImageDetail image={image} />
+  });
   return (
     <ul>
-      <ImageDetail />
+      {RenderedImages}
     </ul>
   );
 };
