@@ -5,7 +5,7 @@
     "underscore",
     "ecma6"
   ],
-  "loadEagerly": ["*.js", "*/*.js", "*/*/*.js", "*/*/*/*.js"],
+  "loadEagerly": ["*.js", "*/*.js", "*/*/*.js", "*/*/*/*.js", "*.jsx", "*/*.jsx", "*/*/*.jsx", "*/*/*/*.jsx"],
   "dontLoad": [".meteor"],
   "plugins": {
     "meteor": {},
