@@ -8,10 +8,19 @@ import ImageList from './components/image_list';
 
 // Create a component
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { images: [] };
+  }
+
   componentWillMount() {
-    console.log('App is about to render');
+    // Fantastic place to load data!!
+    axios.get('https://api.imgur.com/3/gallery/hot/viral/0')
+    .then(response => this.setState({ images: response.data.data }));
   }
   render() {
+    console.log(this.state.images);
     return (
     <div>
       <ImageList />
@@ -23,6 +32,4 @@ class App extends Component {
 // Render this component on the screen
 Meteor.startup(() => {
   ReactDOM.render(<App />, document.querySelector('.container'));
-  axios.get('https://api.imgur.com/3/gallery/hot/viral/0')
-    .then(response => console.log(response));
 });
