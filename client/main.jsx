@@ -20,10 +20,9 @@ class App extends Component {
     .then(response => this.setState({ images: response.data.data }));
   }
   render() {
-    console.log(this.state.images);
     return (
     <div>
-      <ImageList />
+      <ImageList images={this.state.images}/>
     </div>
     );
   }
