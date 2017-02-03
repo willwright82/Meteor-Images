@@ -11,6 +11,7 @@ const ImageList = (props) => {
   const RenderedImages = validImages.map(function(image) {
     return <ImageDetail key={image.title} image={image} />
   });
+
   return (
     <ul className="media-list list-group">
       {RenderedImages}
